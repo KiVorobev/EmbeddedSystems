@@ -17,11 +17,11 @@ button:active {
     box-shadow: 0 0 5px 3px greenyellow;
 }
 
-#delete_reader {
+#delete_scanner {
     margin-left: 10%;
 }
 
-#reader_buttons {
+#scanner_buttons {
     margin-top: 2vh;
     width: 70%;
     margin-left: 15%;
