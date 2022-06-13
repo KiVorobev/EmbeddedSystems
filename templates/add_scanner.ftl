@@ -6,20 +6,24 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RFID System</title>
-    <link rel="stylesheet" type="text/css" href="../styles/index.css">
-    <link rel="stylesheet" type="text/css" href="../styles/header.css">
-    <link rel="stylesheet" type="text/css" href="../styles/add_scanner.css">
-    <script src="../scripts/navigator.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../scripts/sender.js"></script>
-    <script src="../scripts/data_collector.js"></script>
+    <style type="text/css">
+        <#include "../styles/index.css">
+        <#include "../styles/header.css">
+        <#include "../styles/add_scanner.css">
+    </style>
+    <script>
+        <#include "../scripts/jquery-3.6.0.js">
+        <#include "../scripts/navigator.js">
+        <#include "../scripts/sender.js">
+        <#include "../scripts/data_collector.js">
+    </script>
 </head>
 <body>
 <header>
     <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
+        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
         <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
+        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
         <p><a href="search.ftl"><span>Поиск</span></a></p>
     </nav>
 </header>
@@ -30,13 +34,13 @@
     <label id="role_label" for="scanner_role_select">Роль:</label>
     <select id="scanner_role_select">
         <option selected disabled>Выберите роль</option>
-        <option>Пользователь</option>
-        <option>Администратор</option>
+        <option>USER</option>
+        <option>ADMIN</option>
     </select>
 
     <div id="add_scanner_buttons">
-        <button onclick="goTo('scanners.ftl')">Отмена</button>
-        <button id="add_scanner_button">Добавить</button>
+        <button onclick=goTo('scanners')>Отмена</button>
+        <button id="add_scanner_button" onclick="addScanner()">Добавить</button>
     </div>
 </main>
 </body>
