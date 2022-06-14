@@ -1,31 +1,33 @@
-header nav {
-    background-color: peachpuff;
-}
-
-header a {
-    text-decoration: none;
-    background-color: peachpuff;
+header {
+    display: table;
     width: 100%;
-}
-
-header p a span {
-    display: inline-block;
-    background-color: whitesmoke;
-    width: 100%;
-    height: 5.8vh;
-    color: coral;
+    height: 15vh;
+    background: peachpuff;
+    z-index: 1000;
+    border: 1px solid black;
     border-radius: 1vh 1vh 1vh 1vh;
-    text-align: center;
-    box-shadow: 0 0 1px 1px rgba(16, 18, 30, 0.55);
     transition: 300ms;
+    text-align: center;
 }
 
-header p {
-    display: inline-block;
-    width: 23.1%;
+header div {
+    display: table-cell;
     background-color: peachpuff;
+    width: 25%;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    font-size: 1.8vw;
 }
 
-header p a span:hover {
-    box-shadow: 0 0 2px 1px black;
+header div:nth-child(1) {
+    border-radius: 1vh 0 0 1vh;
+}
+
+header div:nth-child(4) {
+    border-radius: 0 1vh 1vh 0;
+}
+
+header div:hover {
+    background-color: antiquewhite;
 }
