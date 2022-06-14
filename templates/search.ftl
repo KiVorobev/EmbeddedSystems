@@ -15,23 +15,20 @@
         <#include "../scripts/jquery-3.6.0.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
+        <#include "../scripts/navigator.js">
     </script>
 </head>
 <body>
 <header>
-    <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
-        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
-        <p><a href="search.ftl"><span>Поиск</span></a></p>
-    </nav>
+    <div onclick=goTo('start')>Главная страница</div>
+    <div onclick=goTo('user/put')>Добавить пользователя</div>
+    <div onclick=goTo('scanners')>Считыватели</div>
+    <div onclick=goTo('user/search')>Поиск</div>
 </header>
 <main>
-    <form method="post">
-        <span>Приложите пропуск к считывателю или введите ID или ФИО ниже:</span>
-        <input type="text" id="search_input" placeholder="Введите ID или ФИО"/>
-        <button id="search_button" type="submit">Поиск</button>
-    </form>
+    <input type="text" id="search_input" placeholder="Введите ID карты"/>
+    <br/>
+    <button id="search_button" onclick="search()">Поиск</button>
 </main>
 </body>
 </html>

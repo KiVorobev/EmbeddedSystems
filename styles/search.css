@@ -1,19 +1,10 @@
-main span {
-    width: 80%;
-    margin-left: 10%;
-    display:block;
-    text-align:center;
-    margin-top: 15vh;
-    font: 6vmin monospace;
-}
-
 main input[type=text] {
-    margin-top: 2vh;
-    width: 60%;
+    margin-top: 27vh;
+    width: 80%;
     margin-left: 10%;
     border-radius: 10px 10px 10px 10px;
     height: 10vh;
-    font: 6vmin monospace;
+    font-size: 6vmin;
     background-color: whitesmoke;
     text-align: center;
     transition: 300ms;
@@ -25,24 +16,25 @@ main input[type=text]:hover, main input[type=text]:focus {
     transform: scale(1.05);
 }
 
-main button[type=submit] {
-    margin-left: 2%;
-    width: 15%;
+main button {
+    margin-top: 5vh;
+    margin-left: 30%;
+    width: 40%;
     height: 10vh;
     border-radius: 10px 10px 10px 10px;
-    font: 6vmin monospace;
+    font-size: 6vmin;
     background-color: whitesmoke;
     text-align: center;
     transition: 300ms;
 }
 
-main button[type=submit]:hover {
+main button:hover {
     transition: 300ms;
     box-shadow: 0 0 5px 10px whitesmoke;
     transform: scale(1.1);
 }
 
-main button[type=submit]:active {
+main button:active {
     transition: 300ms;
     box-shadow: 0 0 5px 10px greenyellow;
     transform: scale(1.1);
