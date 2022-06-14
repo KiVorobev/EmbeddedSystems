@@ -13,16 +13,26 @@
     </style>
     <script>
         <#include "../scripts/navigator.js">
+        window.onload = function () {
+            let role = "${user.role}"
+            let finalRole
+            if (role === "USER") {
+                finalRole = "Пользователь"
+            } else if (role === "ADMIN") {
+                finalRole = "Админ"
+            } else {
+                finalRole = "Ошибка"
+            }
+            document.getElementById('role-block').innerHTML = finalRole
+        }
     </script>
 </head>
 <body>
 <header>
-    <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
-        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
-        <p><a href="search.ftl"><span>Поиск</span></a></p>
-    </nav>
+    <div onclick=goTo('start')>Главная страница</div>
+    <div onclick=goTo('user/put')>Добавить пользователя</div>
+    <div onclick=goTo('scanners')>Считыватели</div>
+    <div onclick=goTo('user/search')>Поиск</div>
 </header>
 <main>
     <div id="left">
@@ -34,7 +44,7 @@
         </div>
         <div id="role">
             <div class="topic">Роль:
-                <text class="content">${user.role}</text>
+                <text id="role-block" class="content"></text>
             </div>
         </div>
         <div id="user_id">
