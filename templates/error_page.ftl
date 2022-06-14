@@ -9,15 +9,16 @@
     <style type="text/css">
         <#include "../styles/error_page.css">
     </style>
+    <script>
+        <#include "../scripts/navigator.js">
+    </script>
 </head>
 <body>
 <header>
-    <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
-        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
-        <p><a href="search.ftl"><span>Поиск</span></a></p>
-    </nav>
+    <div onclick=goTo('start')>Главная страница</div>
+    <div onclick=goTo('user/put')>Добавить пользователя</div>
+    <div onclick=goTo('scanners')>Считыватели</div>
+    <div onclick=goTo('user/search')>Поиск</div>
 </header>
 <main>
     <img src="../img/404.png" alt="error"/>
