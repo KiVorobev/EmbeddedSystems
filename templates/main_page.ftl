@@ -18,12 +18,10 @@
 </head>
 <body>
 <header>
-    <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
-        <p><a onclick=goTo('add')><span>Добавить пользователя</span></a></p>
-        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
-        <p><a onclick=goTo('search')><span>Поиск</span></a></p>
-    </nav>
+    <div onclick=goTo('start')>Главная страница</div>
+    <div onclick=goTo('user/put')>Добавить пользователя</div>
+    <div onclick=goTo('scanners')>Считыватели</div>
+    <div onclick=goTo('user/search')>Поиск</div>
 </header>
 <main>
     <ul>
@@ -47,7 +45,7 @@
                         <tr>
                             <td>${activity.scannerHardwareNum}</td>
                             <td>${activity.enterActivity}</td>
-                            <td>${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
+                            <td onclick="goTo('user/get/${activity.user.id}')">${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
                         </tr>
                     </#list>
                     </tbody>
