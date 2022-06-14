@@ -14,29 +14,33 @@
     <script>
         <#include "../scripts/jquery-3.6.0.js">
         <#include "../scripts/navigator.js">
+        <#include "../scripts/role_converter.js">
+        <#include "../scripts/validator.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
     </script>
 </head>
 <body>
 <header>
-    <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
-        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
-        <p><a href="search.ftl"><span>Поиск</span></a></p>
-    </nav>
+    <div onclick=goTo('start')>Главная страница</div>
+    <div onclick=goTo('user/put')>Добавить пользователя</div>
+    <div onclick=goTo('scanners')>Считыватели</div>
+    <div onclick=goTo('user/search')>Поиск</div>
 </header>
 <main>
-    <label id="id_label" for="add_scanner_input">ID:</label>
-    <input id="add_scanner_input" type="text"/>
+    <div id="id-block">
+        <label id="id_label" for="add_scanner_input">ID:</label>
+        <input id="add_scanner_input" type="text"/>
+    </div>
 
-    <label id="role_label" for="scanner_role_select">Роль:</label>
-    <select id="scanner_role_select">
-        <option selected disabled>Выберите роль</option>
-        <option>USER</option>
-        <option>ADMIN</option>
-    </select>
+    <div id="role-block">
+        <label id="role_label" for="scanner_role_select">Роль:</label>
+        <select id="scanner_role_select">
+            <option selected disabled>Выберите роль</option>
+            <option>Пользователь</option>
+            <option>Админ</option>
+        </select>
+    </div>
 
     <div id="add_scanner_buttons">
         <button onclick=goTo('scanners')>Отмена</button>
