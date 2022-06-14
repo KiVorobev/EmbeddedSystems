@@ -1,9 +1,9 @@
 main input[type=text] {
     margin-top: 20vh;
-    width: 60%;
+    width: 70%;
     border-radius: 10px 10px 10px 10px;
     height: 10vh;
-    font: 6vmin monospace;
+    font-size: 6vmin;
     background-color: whitesmoke;
     text-align: center;
     transition: 300ms;
@@ -14,9 +14,14 @@ main input[type=text]:hover, main input[type=text]:focus {
     box-shadow: 0 0 5px 8px whitesmoke;
 }
 
+#input-block {
+    text-align: right;
+    width: 82%;
+}
+
 label {
-    margin-left: 18%;
-    font: 6vmin monospace;
+    margin-left: 19%;
+    font-size: 6vmin;
 }
 
 #delete_scanner_buttons {
@@ -42,6 +47,10 @@ button:hover {
 button:active {
     transition: 300ms;
     box-shadow: 0 0 5px 3px greenyellow;
+}
+
+#delete_scanner_buttons {
+    text-align: center;
 }
 
 #delete_scanner_button {
