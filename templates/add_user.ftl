@@ -14,41 +14,50 @@
     <script>
         <#include "../scripts/jquery-3.6.0.js">
         <#include "../scripts/navigator.js">
+        <#include "../scripts/role_converter.js">
+        <#include "../scripts/validator.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
     </script>
 </head>
 <body>
 <header>
-    <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
-        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
-        <p><a href="search.ftl"><span>Поиск</span></a></p>
-    </nav>
+    <div onclick=goTo('start')>Главная страница</div>
+    <div onclick=goTo('user/put')>Добавить пользователя</div>
+    <div onclick=goTo('scanners')>Считыватели</div>
+    <div onclick=goTo('user/search')>Поиск</div>
 </header>
 <main>
     <div id="left">
         <label id="role_label" for="role_select">Роль:</label>
         <select id="role_select">
             <option selected disabled>Выберите роль</option>
-            <option>USER</option>
-            <option>ADMIN</option>
+            <option>Пользователь</option>
+            <option>Админ</option>
         </select>
     </div>
 
     <div id="right">
-        <label id="id_label" for="card_id">ID карты:</label>
-        <input id="card_id" type="text" placeholder="Введите ID карты"/>
-        <br/>
-        <label id="surname_label" for="surname">Фамилия:</label>
-        <input id="surname" type="text" placeholder="Введите фамилию"/>
-        <br/>
-        <label id="name_label" for="name">Имя:</label>
-        <input id="name" type="text" placeholder="Введите имя"/>
-        <br/>
-        <label id="patronymic_label" for="patronymic">Отчество:</label>
-        <input id="patronymic" type="text" placeholder="Введите отчество"/>
+        <div class="inputs">
+            <label id="id_label" for="card_id">ID карты:</label>
+            <input id="card_id" type="text" placeholder="Введите ID карты"/>
+        </div>
+
+        <div class="inputs">
+            <label id="surname_label" for="surname">Фамилия:</label>
+            <input id="surname" type="text" placeholder="Введите фамилию"/>
+        </div>
+
+        <div class="inputs">
+            <label id="name_label" for="name">Имя:</label>
+            <input id="name" type="text" placeholder="Введите имя"/>
+        </div>
+
+        <div class="inputs">
+            <label id="patronymic_label" for="patronymic">Отчество:</label>
+            <input id="patronymic" type="text" placeholder="Введите отчество"/>
+        </div>
+
         <div id="add_user_buttons">
             <button onclick="goTo('start')">Отмена</button>
             <button id="add_user_button" onclick="addUser()">Сохранить</button>
