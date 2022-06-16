@@ -6,6 +6,7 @@ button {
     width:44%;
     height: 7vh;
     background-color: whitesmoke;
+    border-radius: 10px 10px 10px 10px;
     font-size: 3.8vmin;
     transition: 300ms;
 }
@@ -73,6 +74,14 @@ caption {
 
 #scroll-table-body tbody tr:nth-child(odd) td {
     background: bisque;
+}
+
+#scroll-table-body tbody tr:nth-child(even):hover td {
+    background: azure;
+}
+
+#scroll-table-body tbody tr:nth-child(odd):hover td {
+    background: cornsilk;
 }
 
 /* Стили для скролла */
