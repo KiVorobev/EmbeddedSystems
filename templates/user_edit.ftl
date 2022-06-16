@@ -11,26 +11,13 @@
         <#include "../styles/header.css">
         <#include "../styles/user_edit.css">
     </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
     <script>
-        <#include "../scripts/jquery-3.6.0.js">
         <#include "../scripts/navigator.js">
         <#include "../scripts/role_converter.js">
         <#include "../scripts/validator.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
-        window.onload = function () {
-            let role = "${user.role}"
-            if (role === "USER") {
-                document.getElementById('user').setAttribute('selected', true);
-                console.log(role)
-            } else {
-                if (role === "ADMIN") {
-                    document.getElementById('admin').setAttribute('selected', true);
-                } else {
-                    document.getElementById('choose').setAttribute('selected', true);
-                }
-            }
-        }
     </script>
 </head>
 <body>
@@ -49,9 +36,14 @@
         </div>
         <label id="role_label" for="role_select">Роль:</label>
         <select id="role_select">
-            <option disabled id="choose">Выберите роль:</option>
-            <option id="user">Пользователь</option>
-            <option id="admin">Админ</option>
+            <option disabled id="choose">Выберите роль</option>
+            <#if user.role == 'USER'>
+                <option selected id="user">Пользователь</option>
+                <option id="admin">Админ</option>
+            <#else>
+                <option id="user">Пользователь</option>
+                <option selected id="admin">Админ</option>
+            </#if>
         </select>
     </div>
 
